@@ -1,10 +1,13 @@
 import "../scss/main.scss"
 import React,{Component} from "react";
 import ReactDOM from "react-dom";
+import {MainTemplate} from "./Components/MainTemplate/MainTemplate";
 
 const App = () => {
-	return <h1 className="test">Hello</h1>
+	return <MainTemplate/>
 }
+
+
 
 ReactDOM.render(
 	<App/>,

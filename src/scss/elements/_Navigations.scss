@@ -1,0 +1,129 @@
+.navigation-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  background-color: $color-text-first;
+
+  .logo {
+    width: 120px;
+    @include desktop {
+      width: 150px;
+    }
+  }
+  // mobile and tablet navigation
+  .hamburger {
+    width: 20px;
+    height: 20px;
+    @include desktop {
+      display: none;
+    }
+
+    &-navigation-list {
+      background-color: $color-bcg;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 45%;
+      height: 100vh;
+      box-shadow: 0 0 15px black;
+      @include desktop {
+        display: none;
+      }
+
+      &__element {
+        color: $color-text-first;
+        font-size: 3vw;
+        font-weight: 400;
+        padding: 20px 0 20px 20px;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-main-template-text;
+          border-left:  3px solid #626ee3;
+        }
+
+      }
+
+      &__maintenance {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+
+
+        &-btn {
+          margin: 20px 20px 20px 0;
+          padding: 5px 10px;
+          font-size: 2rem;
+          align-self: flex-end;
+          background: lighten($color-bcg,3%);
+          color: white;
+          border: none;
+          box-shadow: 0 0 15px 0 #000;
+
+        }
+
+        &-logo {
+          display: block;
+
+          width: 80%;
+          img {
+            width: 80%;
+          }
+        }
+
+        &-info {
+          margin: 20px 0 ;
+          font-size: 2vw;
+          color: $color-main-template-text;
+          font-weight: 700;
+          text-align: center;
+          @include tablet {
+            margin: 40px 0;
+          }
+        }
+      }
+    }
+  }
+  // desktop navigation
+  .desktop-navigation {
+    display: none;
+    @include desktop {
+      display: block;
+
+    }
+
+    &-list {
+      display: flex;
+      margin-right: 20px;
+
+      &__element {
+        display: block;
+        padding: 35px;
+        font-size: 3rem;
+        text-decoration: none;
+        color: $color-main-template-text;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #fffffd;
+          color: darken($color-main-template-text,10%);
+          border-bottom: 3px solid $color-text-second;
+
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+}

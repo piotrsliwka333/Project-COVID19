@@ -1,0 +1,45 @@
+$columns: 12;
+$columns-base-width: 100% / $columns;
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    [class*='col-'] {
+      min-width: 1px;
+      width: $columns-base-width;
+    }
+
+    // Mobile size max width max-width 767 px
+
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        width: $columns-base-width * $i;
+      }
+    }
+
+    // tablet size  //min-width: 768 px
+    @for $i from 1 through $columns {
+      @include tablet {
+        .col-md-#{$i} {
+          width: $columns-base-width * $i;
+        }
+      }
+    }
+
+    // desktop size //min-width: 1200px
+    @for $i from 1 through $columns {
+      @include desktop {
+        .col-xl-#{$i} {
+          width: $columns-base-width * $i;
+        }
+      }
+    }
+
+
+
+  }
+}

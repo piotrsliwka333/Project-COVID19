@@ -1,3 +1,12 @@
-.test {
-  color: red;
-}
+//settings
+@import "settings/mixins";
+@import "settings/variables";
+
+// generic
+@import "generic/reset";
+@import "generic/grid";
+@import "settings/base";
+//elements
+
+@import "elements/MainTemplate";
+@import "elements/Navigations";
