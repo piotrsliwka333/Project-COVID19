@@ -4,12 +4,14 @@ $columns-base-width: 100% / $columns;
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
 
   .row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     [class*='col-'] {
-      min-width: 1px;
+      min-height: 1px;
       width: $columns-base-width;
     }
 

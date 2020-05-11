@@ -1,0 +1,461 @@
+.jumbotron{
+  margin-top: 10px;
+
+
+
+  &-title {
+    margin: 30px auto;
+    width: 60%;
+    font-size: 6.7vw;
+
+    @include tablet {
+      font-size: 5vw;
+    }
+  }
+
+
+  .container { // here You can manipulate of width container which set grid
+    max-width: 1400px;
+  }
+  .health-test {
+    margin: 0 auto;
+    border-radius: 10px;
+
+    box-shadow: 0 0 4px 3px black;
+    @include tablet {
+      margin-top: 60px;
+    }
+
+    @include desktop {
+      margin-top: 60px;
+    }
+
+    &__title {
+      padding: 5px;
+      color: $color-main-title;
+      font-size: 3rem;
+      border-bottom: 2px solid black;
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+
+      &-title {
+        font-size: 2.5rem;
+        color: #FF4D79;
+        font-weight: bold;
+        padding: 20px 0;
+      }
+
+      .health-test__form-box {
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: $color-box-shadow;
+        border-radius: 10px ;
+        height: 450px;
+        overflow-y: auto;
+
+        .health-test__form {
+
+          &-boxes {
+            margin: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            label {
+              font-size: 2rem;
+              width: 80%;
+
+
+              @include tablet {
+                font-size: 2.2rem;
+              }
+
+              @include desktop {
+                font-size: 2.5rem;
+
+              }
+
+            }
+
+            input {
+              margin-left: 10px;
+              appearance: none;
+              width: 40px;
+              height: 40px;
+              display: inline-block;
+              vertical-align: middle;
+              border-radius: 5px;
+              box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+              background: #eee;
+              outline: none;
+              position: relative;
+              padding: 1px;
+
+
+            }
+            input:checked {
+              background: #b3d4fc;
+              box-shadow: $color-box-shadow;
+            }
+
+            input:checked:after {
+              content: "🤢";
+              display: block;
+              font-size: 25px;
+              width: 40px;
+              height: 40px;
+
+              text-align: center;
+              position: absolute;
+              left: 50%;
+              top: 60%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &-btn {
+            color: $color-text-first;
+            background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+            padding: 16px 32px;
+            font-weight: 700;
+            box-shadow: 0 8px 16px rgba(255,77,121,0.25);
+            border-radius: 10px;
+            font-size: 1.8rem;
+            font-family: 'Mukta',sans-serif;
+            margin: 0 auto;
+            border: none;
+
+            &:hover {
+              box-shadow: 0 8px 16px 10px rgba(255,77,121,0.25);
+            }
+
+            &:active {
+              box-shadow: inset 0 8px 16px 10px rgba(255,77,121,0.25);
+            }
+          }
+
+
+        }
+      }
+      // animation after done test
+
+      .progress-bar {
+        padding: 0 10px;
+        width: 80%;
+        background-color: black;
+        height: 6rem;
+        color: #eeeeee;
+        border-radius: 3rem;
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        .progress {
+          background-color: #0081F6;
+          font-size: 2rem;
+          color: white;
+          border-radius: 3rem;
+          width: 20%;
+          padding: 1rem;
+          animation-name: length;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+        }
+
+      }
+      @keyframes length {
+        0% {
+          width: 10%;
+        }
+        100% {
+          width: 100%;
+        }
+
+      }
+
+      @keyframes size {
+        0% {
+          font-size: 3rem;
+        }
+
+        100% {
+          font-size: 5rem;
+        }
+
+      }
+
+      .health-rate {
+        margin-top: 50px;
+
+
+        .circle {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+          border: 10px solid ;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include desktop {
+            width: 300px;
+            height: 300px;
+
+          }
+
+          .percentage {
+            font-size: 3rem;
+            font-weight: bold;
+            animation-name: size;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+          }
+        }
+
+
+        .heart {
+          position: absolute;
+          top: 70%;
+          width: 30px;
+          height: 30px;
+          background: #ff0000;
+          transform: rotate(45deg) translate(10px, 10px);
+          animation: heartbeat 1s linear infinite;
+        }
+
+        .heart::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: #ff0000;
+          position: absolute;
+          top: -50%;
+          left: 0;
+          border-radius: 50%;
+        }
+
+        .heart::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: #ff0000;
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+          border-radius: 50%;
+        }
+
+        @keyframes  heartbeat{
+          0% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1);
+          }
+          25% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1);
+          }
+          30% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1.4);
+          }
+          50% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1.2);
+          }
+          70% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1.4);
+          }
+          90% {
+            transform: rotate(45deg) translate(3px, 3px) scale(1);
+          }
+          100% {
+            transform: rotate(45deg) translate(3px,3px) scale(1);
+          }
+
+        }
+
+        .health-info {
+          padding: 10px;
+
+
+          p {
+            margin: 20px 0;
+            width: 70%;
+            font-size: 2rem;
+            color: #FF4D79;
+
+            span {
+              font-weight: bold;
+              font-size: 2.2rem;
+            }
+          }
+
+          a {
+            text-shadow: 1px 2px black;
+            text-align: center;
+            padding: 20px 15px;
+            text-decoration: none;
+            background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+            border-radius: 20px;
+            font-weight: bold;
+            color: #eeeeee;
+            box-shadow: $color-box-shadow;
+            font-size: 2rem;
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+
+          }
+          a:hover {
+
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  .quick-stats {
+    margin: 20px auto;
+    border: 1px solid red;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 3px black;
+
+    @include tablet {
+      align-self: flex-start;
+
+    }
+
+    @include desktop {
+      margin-left: 200px;
+      align-self: flex-start;
+    }
+
+    &__title {
+      padding: 20px 0;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      width: 100%;
+      border-bottom: 2px solid black;
+    }
+
+    &__logo-container {
+      border-bottom: 2px solid black;
+
+        &-world {
+          width: 64px;
+        }
+
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid black;
+
+      &-section:nth-child(2) {
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        padding: 10px 50px;
+      }
+
+      &-section {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+        p {
+          font-size: 2rem;
+          margin: 2px;
+        }
+      }
+    }
+
+    &__box:nth-of-type(4) {
+      border-bottom: none;
+    }
+
+
+  }
+
+  .appointment {
+    margin: 50px auto;
+    border-radius: 20px;
+    border: 2px solid #626ee3;
+    box-shadow: 0 0 4px 3px #626ee3;
+    @include desktop {
+      margin: 70px 0 20px 400px
+    }
+
+    &__title {
+      color: $color-main-template-text;
+      font-size: 3.5rem;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom:  4px solid #626ee3;
+    }
+
+    &__box {
+      padding: 20px 0;
+      background-color: ghostwhite;
+      border-radius: 0 0 20px 20px;
+
+      .appointment-form {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__label {
+          font-size: 2rem;
+
+        }
+
+        &__input {
+          width: 50%;
+          font-size: 1.5rem;
+          border: none;
+          border-bottom: 2px solid gray;
+          padding: 10px 5px;
+          margin-bottom: 30px;
+          background-color: darken(#626ee3,1%);
+        }
+
+        .appointment-form__btn {
+          color: $color-text-first;
+          background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+          padding: 16px 32px;
+          font-weight: 700;
+          box-shadow: 0 8px 16px rgba(255,77,121,0.25);
+          border-radius: 10px;
+          font-size: 1.8rem;
+          font-family: 'Mukta',sans-serif;
+          margin: 0 auto;
+          border: none;
+
+          &:hover {
+            box-shadow: 0 8px 16px 10px rgba(255,77,121,0.25);
+          }
+        }
+
+      }
+
+
+
+
+
+    }
+
+
+  }
+}

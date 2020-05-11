@@ -17,9 +17,11 @@
   .hamburger {
     width: 20px;
     height: 20px;
+
     @include desktop {
       display: none;
     }
+
 
     &-navigation-list {
       background-color: $color-bcg;
@@ -33,13 +35,22 @@
         display: none;
       }
 
+
+
+
       &__element {
         color: $color-text-first;
-        font-size: 3vw;
+        font-size: 4.5vw;
         font-weight: 400;
         padding: 20px 0 20px 20px;
         display: block;
         text-decoration: none;
+        @include tablet {
+          font-size: 4vw;
+        }
+        @include desktop {
+          font-size: 3vw;
+        }
 
         &:hover {
           color: $color-main-template-text;
