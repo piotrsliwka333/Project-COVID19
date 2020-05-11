@@ -7,6 +7,7 @@ import {QuickStatsCountry} from "./QuickStats/QuickStatsCountry";
 import {QuickStatsWorld} from "./QuickStats/QuickStatsWorld";
 import {HealthTest} from "./HealthTest/HealthTest";
 import {AppointmentForm} from "./AppointmentForm/AppointmentForm";
+import {News} from "./News/news";
 
 export const HomePage = () => {
 
@@ -24,6 +25,12 @@ export const HomePage = () => {
 							<QuickStatsWorld/>
 						</QuickStats>
 						<AppointmentForm/>
+				</Grid>
+			</section>
+			<section className="news">
+				<h2 className="news__title">The latest News's about CONVID-19</h2>
+				<Grid>
+					<News/>
 				</Grid>
 			</section>
 		</MainTemplate>
