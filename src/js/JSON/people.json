@@ -95,6 +95,14 @@
       "email": "dasdada@wp.pl",
       "city": "dasdasdas",
       "id": 12
+    },
+    {
+      "name": "Piotr Śliwka",
+      "surname": "Śliwka",
+      "phone": "792957471",
+      "email": "piotrsliwka333@gmail.com",
+      "city": "Wrocław",
+      "id": 13
     }
   ]
 }

@@ -1,0 +1,45 @@
+.footer {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #02203c;
+
+  &__github {
+    margin:20px 0;
+    font-size: 50px;
+    color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px black;
+
+  }
+
+
+  &__title {
+    color: #eeeeee;
+    font-size: 5rem;
+  }
+
+  &__description {
+    color: #FF4D79;
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+
+  &__email {
+    color: #eeeeee;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 3rem;
+    }
+
+  }
+
+}

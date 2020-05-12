@@ -1,5 +1,6 @@
 import React from "react";
 import {Navigation} from "./Navigation";
+import {Footer} from "./Footer";
 
 export const MainTemplate  = (props) => {
 
@@ -12,7 +13,7 @@ export const MainTemplate  = (props) => {
 				{props.children}
 			</main>
 			<footer>
-
+				<Footer/>
 			</footer>
 		</>
 	)
