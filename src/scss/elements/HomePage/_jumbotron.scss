@@ -1,10 +1,11 @@
 .jumbotron{
-  margin-top: 10px;
+  background: linear-gradient(147deg, rgba(2,32,60,1) 0%, rgba(0,129,246,1) 12%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 100%);
 
 
 
   &-title {
-    margin: 30px auto;
+    margin: 0 auto;
+    padding: 20px 0;
     width: 60%;
     font-size: 6.7vw;
 
@@ -19,9 +20,11 @@
   }
   .health-test {
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: #eeeeee;
 
-    box-shadow: 0 0 4px 3px black;
+    box-shadow: #FF4D79 0 2rem 2rem;
+    border: 1px solid #FF4D79;
     @include tablet {
       margin-top: 60px;
     }
@@ -31,8 +34,10 @@
     }
 
     &__title {
-      padding: 5px;
+      padding: 20px;
       color: $color-main-title;
+      text-align: center;
+      font-weight: bold;
       font-size: 3rem;
       border-bottom: 2px solid black;
     }
@@ -323,9 +328,10 @@
 
   .quick-stats {
     margin: 20px auto;
-    border: 1px solid red;
     border-radius: 20px;
-    box-shadow: 0 0 4px 3px black;
+    box-shadow: #0081F6 0 2rem 2rem;
+    background-color: #EAEAEA;
+    color: #02203c;
 
     @include tablet {
       align-self: flex-start;

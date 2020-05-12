@@ -9,7 +9,7 @@ export const News = () => {
 
 	useEffect(() => {
 
-		fetch('http://newsapi.org/v2/top-headlines?country=pl&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0',{
+		fetch('http://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0',{
 			method: 'GET'
 		})
 			.then(resp => resp.json())
@@ -47,13 +47,11 @@ export const News = () => {
 			</div>
 			<div className="news-container col-10 col-md-10 col-xl-10">
 				<figure>
-					<img  src={news[5].urlToImage}/>
+					<img  src={news[2].urlToImage}/>
 				</figure>
-				<p>{news[5].title}</p>
-				<a target="_blank" href={news[5].url}>Read more</a>
+				<p>{news[2].title}</p>
+				<a target="_blank" href={news[2].url}>Read more</a>
 			</div>
-
 		</>
-
 	)
 }
