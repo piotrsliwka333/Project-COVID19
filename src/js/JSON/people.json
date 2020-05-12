@@ -1,0 +1,100 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "John",
+      "surname": "Doe",
+      "age": 25,
+      "city": "Warsaw",
+      "gender": "male"
+    },
+    {
+      "name": "",
+      "surname": "",
+      "age": "",
+      "gender": "",
+      "city": "",
+      "id": 2
+    },
+    {
+      "name": "Piotr ",
+      "surname": "",
+      "age": "",
+      "gender": "",
+      "city": "",
+      "id": 3
+    },
+    {
+      "name": "Piotr Śliwka",
+      "surname": "Śliwka",
+      "age": "19",
+      "gender": "",
+      "city": "Wrocław",
+      "id": 4
+    },
+    {
+      "name": "Piotr",
+      "surname": "Śliwka",
+      "age": "19",
+      "gender": "",
+      "city": "Wrocław",
+      "id": 5
+    },
+    {
+      "name": "das",
+      "surname": "das",
+      "age": "3",
+      "gender": "male",
+      "city": "das",
+      "id": 6
+    },
+    {
+      "name": "dasdasdas",
+      "surname": "dadas",
+      "phone": "3123123123",
+      "email": "eqwewewe@",
+      "city": "ewqeqweq",
+      "id": 7
+    },
+    {
+      "name": "dsadsa",
+      "surname": "dasdsadsa",
+      "phone": "13213123131312312",
+      "email": "dasdasdas@",
+      "city": "dadsad",
+      "id": 8
+    },
+    {
+      "name": "Piotr Śliwka",
+      "surname": "Śliwka",
+      "phone": "792957471",
+      "email": "piotrsliwka333@gmail.com",
+      "city": "Wrocław",
+      "id": 9
+    },
+    {
+      "name": "Piotr Śliwka",
+      "surname": "Śliwka",
+      "phone": "792957471",
+      "email": "piotrsliwka333@gmail.com",
+      "city": "Wrocław",
+      "id": 10
+    },
+    {
+      "name": "dasdsa",
+      "surname": "dasda",
+      "phone": "33131232313123",
+      "email": "dassda@wp.pl",
+      "city": "daasds",
+      "id": 11
+    },
+    {
+      "name": "dasdasdasd",
+      "surname": "ddasad",
+      "phone": "31231313",
+      "email": "dasdada@wp.pl",
+      "city": "dasdasdas",
+      "id": 12
+    }
+  ]
+}
