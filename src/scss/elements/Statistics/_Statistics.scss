@@ -1,0 +1,16 @@
+.statistics {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+
+  &__chart {
+    width: 70%;
+  }
+
+  &-settings {
+    width: 20%;
+    border: 1px solid red;
+  }
+}
