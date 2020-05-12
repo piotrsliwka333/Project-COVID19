@@ -27,7 +27,7 @@ export const QuickStatsWorld = () => {
 		<>
 			<div className="quick-stats__logo-container">
 				<img className={"quick-stats__logo-container-world"} src="../../../../assets/worldd.png"/>
-				<span>World</span>
+				<span className="quick-stats__logo-container-name">World</span>
 			</div>
 			<div className="quick-stats__box">
 				<div className="quick-stats__box-section">

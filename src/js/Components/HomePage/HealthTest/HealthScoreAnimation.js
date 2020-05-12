@@ -42,7 +42,7 @@ export const HealthScoreAnimation = (props) => {
 				<div className="health-info">
 					<p>Your chance <span>{pointsToShow}%</span> to be a carrier of COVID-19</p>
 					<p>More than 55% ? better to enter our form</p>
-					<a href="#">Enter Form</a>
+					<a href="#appointment">Enter Form</a>
 				</div>
 			</div>
 		</>

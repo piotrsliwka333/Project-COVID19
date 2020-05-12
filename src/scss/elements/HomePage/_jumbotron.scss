@@ -21,10 +21,9 @@
   .health-test {
     margin: 0 auto;
     border-radius: 20px;
-    background-color: #eeeeee;
+    background-color: #f1eeee;
 
-    box-shadow: #FF4D79 0 2rem 2rem;
-    border: 1px solid #FF4D79;
+    box-shadow:  0 1rem 2rem 1rem #FF4D79;
     @include tablet {
       margin-top: 60px;
     }
@@ -46,10 +45,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 10px 20px 10px;
 
       &-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
         color: #FF4D79;
         font-weight: bold;
         padding: 20px 0;
@@ -58,12 +57,14 @@
       .health-test__form-box {
         margin-bottom: 20px;
         padding: 10px;
-        box-shadow: $color-box-shadow;
+
+        box-shadow:  0 1rem 2rem 0.5rem gray;
         border-radius: 10px ;
         height: 450px;
         overflow-y: auto;
 
         .health-test__form {
+          margin-top: 20px;
 
           &-boxes {
             margin: 40px 0;
@@ -199,6 +200,7 @@
 
 
         .circle {
+          background-color: lightgray;
           position: relative;
           width: 200px;
           height: 200px;
@@ -327,13 +329,14 @@
 
 
   .quick-stats {
-    margin: 20px auto;
+    margin: 50px auto;
     border-radius: 20px;
-    box-shadow: #0081F6 0 2rem 2rem;
+    box-shadow:  0 1rem 2rem 0.5rem #02203c;
     background-color: #EAEAEA;
     color: #02203c;
 
     @include tablet {
+      margin: 20px auto;
       align-self: flex-start;
 
     }
@@ -356,9 +359,16 @@
       border-bottom: 2px solid black;
 
         &-world {
+          padding: 10px 0;
           width: 64px;
+          margin-left: 10px;
         }
+        &-name {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-left: 10px;
 
+        }
     }
 
     &__box {
@@ -366,6 +376,66 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid black;
+
+      &-country {
+        width: 50%;
+
+        &-flag {
+          margin-left: 10px;
+        }
+
+       &-name {
+         font-weight: bold;
+         font-size: 2rem;
+         color: $color-main-title;
+         padding: 0 10px;
+       }
+
+        &-select {
+          margin-top: 10px;
+          border: none;
+          border-bottom: 1px solid #02203c;
+          padding: 5px 10px;
+          width: 70%;
+          display: block;
+          font-size: 1.4rem;
+          color: #02203c;
+          font-weight: bold;
+        }
+        &-select::placeholder {
+          font-size: 1.2rem;
+          color: #02203c;
+        }
+
+        &-select-btn {
+          font-family: 'Mukta', sans-serif;
+          margin-bottom: 20px;
+          background-color: #fff;
+          border-radius: 10px;
+          border: none;
+          padding: 10px 20px;
+          color: #0e3655;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          display: block;
+          text-decoration: none;
+          box-shadow: 1px 2px 2px #7f7f7f;
+          transition: 1s;
+          margin-top: 10px;
+          width: 80%;
+        }
+
+        &-select-btn:hover {
+          transition: 1s;
+          color: white;
+          background-color: #0e3655;
+        }
+
+
+      }
+
+
 
       &-section:nth-child(2) {
         border-right: 1px solid black;
@@ -383,6 +453,8 @@
         p {
           font-size: 2rem;
           margin: 2px;
+          color: #02203c;
+          font-weight: bold;
         }
       }
     }
@@ -397,14 +469,14 @@
   .appointment {
     margin: 50px auto;
     border-radius: 20px;
-    border: 2px solid #626ee3;
-    box-shadow: 0 0 4px 3px #626ee3;
+    box-shadow:  0 1rem 2rem 1rem #626ee3;
     @include desktop {
-      margin: 70px 0 20px 400px
+      margin: 100px 0 20px 400px
     }
 
     &__title {
-      color: $color-main-template-text;
+      color: #626ee3;
+      font-weight: bold;
       font-size: 3.5rem;
       text-align: center;
       padding: 20px 0;
@@ -415,26 +487,46 @@
       padding: 20px 0;
       background-color: ghostwhite;
       border-radius: 0 0 20px 20px;
+      display: flex;
+
+      .appointment-animation {
+        display: none;
+        width: 40%;
+        align-self: start;
+        flex-grow: 1;
+
+        @include desktop {
+          display: block;
+        }
+      }
 
       .appointment-form {
         padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-grow: 2;
+
 
         &__label {
           font-size: 2rem;
+          color: #02203c;
+          font-weight: bold;
 
         }
 
         &__input {
-          width: 50%;
+          margin-top: 5px;
+          color: #02203c;
+          font-weight: bold;
+          display: block;
+          width: 100%;
           font-size: 1.5rem;
           border: none;
           border-bottom: 2px solid gray;
           padding: 10px 5px;
           margin-bottom: 30px;
-          background-color: darken(#626ee3,1%);
+          background-color: lighten(#626ee3,12%);
+          @include tablet {
+            width: 100%;
+          }
         }
 
         .appointment-form__btn {
