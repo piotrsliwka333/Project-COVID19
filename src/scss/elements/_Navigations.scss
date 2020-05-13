@@ -112,11 +112,15 @@
     &-list {
       display: flex;
       margin-right: 20px;
+      height: 100%;
+
+      li {
+      }
 
       &__element {
         display: block;
-        padding: 35px;
-        font-size: 3rem;
+        padding: 20px;
+        font-size: 2.5rem;
         text-decoration: none;
         color: $color-main-template-text;
         font-weight: bold;
@@ -125,16 +129,10 @@
           background-color: #fffffd;
           color: darken($color-main-template-text,10%);
           border-bottom: 3px solid $color-text-second;
-
+          padding-bottom: 17px; // padding  with border can not be higher
+                                // with basic padding
         }
       }
     }
   }
-
-
-
-
-
-
-
 }

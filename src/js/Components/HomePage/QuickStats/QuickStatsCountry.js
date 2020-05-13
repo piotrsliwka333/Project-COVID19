@@ -20,17 +20,17 @@ export const QuickStatsCountry = () => {
 
 
 
-	// useEffect(() => {
-	// 	fetch('https://api.covid19api.com/summary',{
-	// 		method: "GET"
-	// 	})
-	// 		.then(resp => resp.json())
-	// 		.then(data => {
-	// 			setCountries(data.Countries)
-	// 		})
-	// 		.catch(err => console.log(err))
-	//
-	// },[])
+	useEffect(() => {
+		fetch('https://api.covid19api.com/summary',{
+			method: "GET"
+		})
+			.then(resp => resp.json())
+			.then(data => {
+				setCountries(data.Countries)
+			})
+			.catch(err => console.log(err))
+
+	},[])
 
 
 	const countriess = [
@@ -80,7 +80,7 @@ export const QuickStatsCountry = () => {
 		e.preventDefault();
 
 			// here we filter all elements and select only one by input value and press button
-			const [selectedCountry] = countriess.filter(element => element.CountryCode === country.toUpperCase() || element.Slug === country.toLowerCase())
+			const [selectedCountry] = countries.filter(element => element.CountryCode === country.toUpperCase() || element.Slug === country.toLowerCase())
 
 			if (typeof selectedCountry === "undefined") {
 				setError(true)
