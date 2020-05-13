@@ -6,6 +6,8 @@
   max-width: 1140px;
   margin: 0 auto;
   background-color: $color-text-first;
+  position: relative;
+  z-index: 100;
 
   .logo {
     width: 120px;

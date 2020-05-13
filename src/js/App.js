@@ -5,6 +5,7 @@ import {MainTemplate} from "./Components/MainTemplate/MainTemplate";
 import {HashRouter,Route} from "react-router-dom";
 import {HomePage} from "./Components/HomePage/Main";
 import {Statistics} from "./Components/Statistics/Statistics";
+import {NewsPage} from "./Components/News/NewsPage";
 
 const App = () => {
 	return (
@@ -12,6 +13,7 @@ const App = () => {
 			<>
 				<Route exact path={'/'} component={HomePage}/>
 				<Route path={'/statistics'} component={Statistics}/>
+				<Route path={'/News'} component={NewsPage}/>
 			</>
 		</HashRouter>
 

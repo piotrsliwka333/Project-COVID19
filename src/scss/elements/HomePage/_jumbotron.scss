@@ -1,5 +1,5 @@
 .jumbotron{
-  background: linear-gradient(147deg, rgba(2,32,60,1) 0%, rgba(0,129,246,1) 12%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(146deg, rgba(2,32,60,1) 35%, rgba(241,238,238,1) 35.5%);
 
 
 
@@ -8,6 +8,7 @@
     padding: 20px 0;
     width: 60%;
     font-size: 6.7vw;
+    color: lightgray;
 
     @include tablet {
       font-size: 5vw;
@@ -23,7 +24,7 @@
     border-radius: 20px;
     background-color: #f1eeee;
 
-    box-shadow:  0 1rem 2rem 1rem #FF4D79;
+    box-shadow:  0 1rem 2rem 1rem darken($color-text-second,30%);
     @include tablet {
       margin-top: 60px;
     }
