@@ -1,0 +1,312 @@
+.health-test {
+  margin: 80px auto;
+  border-radius: 20px;
+  background-color: #f1eeee;
+  width: 80%;
+  @include tablet {
+    width: 60%;
+  }
+  @include desktop {
+    width: 40%;
+  }
+
+  box-shadow:  0 1rem 2rem 1rem darken($color-text-second,30%);
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    margin-top: 60px;
+  }
+
+  &__title {
+    padding: 20px;
+    color: $color-main-title;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    border-bottom: 2px solid black;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 20px 10px;
+
+    &-title {
+      font-size: 3rem;
+      color: #FF4D79;
+      font-weight: bold;
+      padding: 20px 0;
+    }
+
+    .health-test__form-box {
+      margin-bottom: 20px;
+      padding: 10px;
+
+      box-shadow:  0 1rem 2rem 0.5rem gray;
+      border-radius: 10px ;
+      height: 450px;
+      overflow-y: auto;
+
+      .health-test__form {
+        margin-top: 20px;
+
+        &-boxes {
+          margin: 40px 0;
+          display: flex;
+          justify-content: space-between;
+          label {
+            font-size: 2rem;
+            width: 80%;
+
+
+            @include tablet {
+              font-size: 2.2rem;
+            }
+
+            @include desktop {
+              font-size: 2.5rem;
+
+            }
+
+          }
+
+          input {
+            margin-left: 10px;
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+            background: #eee;
+            outline: none;
+            position: relative;
+            padding: 1px;
+
+
+          }
+          input:checked {
+            background: #b3d4fc;
+            box-shadow: $color-box-shadow;
+          }
+
+          input:checked:after {
+            content: "🤢";
+            display: block;
+            font-size: 25px;
+            width: 40px;
+            height: 40px;
+
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &-btn {
+          color: $color-text-first;
+          background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+          padding: 16px 32px;
+          font-weight: 700;
+          box-shadow: 0 8px 16px rgba(255,77,121,0.25);
+          border-radius: 10px;
+          font-size: 1.8rem;
+          font-family: 'Mukta',sans-serif;
+          margin: 0 auto;
+          border: none;
+
+          &:hover {
+            box-shadow: 0 8px 16px 10px rgba(255,77,121,0.25);
+          }
+
+          &:active {
+            box-shadow: inset 0 8px 16px 10px rgba(255,77,121,0.25);
+          }
+        }
+
+
+      }
+    }
+    // animation after done test
+
+    .progress-bar {
+      padding: 0 10px;
+      width: 80%;
+      background-color: black;
+      height: 6rem;
+      color: #eeeeee;
+      border-radius: 3rem;
+      position: relative;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      .progress {
+        background-color: #0081F6;
+        font-size: 2rem;
+        color: white;
+        border-radius: 3rem;
+        width: 20%;
+        padding: 1rem;
+        animation-name: length;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+      }
+
+    }
+    @keyframes length {
+      0% {
+        width: 10%;
+      }
+      100% {
+        width: 100%;
+      }
+
+    }
+
+    @keyframes size {
+      0% {
+        font-size: 3rem;
+      }
+
+      100% {
+        font-size: 5rem;
+      }
+
+    }
+
+    .health-rate {
+      margin-top: 50px;
+
+
+      .circle {
+        background-color: lightgray;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border: 10px solid ;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include desktop {
+          width: 300px;
+          height: 300px;
+
+        }
+
+        .percentage {
+          font-size: 3rem;
+          font-weight: bold;
+          animation-name: size;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+
+      .heart {
+        position: absolute;
+        top: 70%;
+        width: 30px;
+        height: 30px;
+        background: #ff0000;
+        transform: rotate(45deg) translate(10px, 10px);
+        animation: heartbeat 1s linear infinite;
+      }
+
+      .heart::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #ff0000;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        border-radius: 50%;
+      }
+
+      .heart::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #ff0000;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        border-radius: 50%;
+      }
+
+      @keyframes  heartbeat{
+        0% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1);
+        }
+        25% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1);
+        }
+        30% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1.4);
+        }
+        50% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1.2);
+        }
+        70% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1.4);
+        }
+        90% {
+          transform: rotate(45deg) translate(3px, 3px) scale(1);
+        }
+        100% {
+          transform: rotate(45deg) translate(3px,3px) scale(1);
+        }
+
+      }
+
+      .health-info {
+        padding: 10px;
+
+
+        p {
+          margin: 20px 0;
+          width: 70%;
+          font-size: 2rem;
+          color: #FF4D79;
+
+          span {
+            font-weight: bold;
+            font-size: 2.2rem;
+          }
+        }
+
+        a {
+          text-shadow: 1px 2px black;
+          text-align: center;
+          padding: 20px 15px;
+          text-decoration: none;
+          background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+          border-radius: 20px;
+          font-weight: bold;
+          color: #eeeeee;
+          box-shadow: $color-box-shadow;
+          font-size: 2rem;
+          width: 50%;
+          display: block;
+          margin: 0 auto;
+
+        }
+        a:hover {
+
+        }
+      }
+    }
+  }
+}
