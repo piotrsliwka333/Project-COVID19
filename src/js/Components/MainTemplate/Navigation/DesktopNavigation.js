@@ -12,7 +12,7 @@ export const DesktopNavigation = () => {
 				<DesktopNavigationElement link={'/health-test'} title={'Health Test'}/>
 				<DesktopNavigationElement link={'/statistics'} title={'Statistics'}/>
 				<DesktopNavigationElement link={'/news'} title={'News'}/>
-				<DesktopNavigationElement link={'/purchase'} title={'Purchase'}/>
+				<DesktopNavigationElement link={'/contact'} title={'Contact'}/>
 			</ul>
 		</nav>
 	)

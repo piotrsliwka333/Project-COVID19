@@ -1,0 +1,88 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.appointment {
+  width: 80%;
+  margin: 70px 0;
+  border-radius: 20px;
+  box-shadow: 0 1rem 2rem 1rem #626ee3;
+  @include desktop {
+    width: 50%;
+  }
+
+  &__title {
+    color: #626ee3;
+    font-weight: bold;
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 4px solid #626ee3;
+  }
+
+  &__box {
+    padding: 20px 0;
+    background-color: ghostwhite;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+
+    .appointment-animation {
+      display: none;
+      width: 40%;
+      align-self: start;
+      flex-grow: 1;
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    .appointment-form {
+      padding: 0 20px;
+      flex-grow: 2;
+
+
+      &__label {
+        font-size: 2rem;
+        color: #02203c;
+        font-weight: bold;
+
+      }
+
+      &__input {
+        margin-top: 5px;
+        color: #02203c;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        font-size: 1.5rem;
+        border: none;
+        border-bottom: 2px solid gray;
+        padding: 10px 5px;
+        margin-bottom: 30px;
+        background-color: lighten(#626ee3, 12%);
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .appointment-form__btn {
+        color: $color-text-first;
+        background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+        padding: 16px 32px;
+        font-weight: 700;
+        box-shadow: 0 8px 16px rgba(255, 77, 121, 0.25);
+        border-radius: 10px;
+        font-size: 1.8rem;
+        font-family: 'Mukta', sans-serif;
+        margin: 0 auto;
+        border: none;
+
+        &:hover {
+          box-shadow: 0 8px 16px 10px rgba(255, 77, 121, 0.25);
+        }
+      }
+    }
+  }
+}

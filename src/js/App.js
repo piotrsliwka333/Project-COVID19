@@ -7,6 +7,7 @@ import {HomePage} from "./Components/HomePage/Main";
 import {Statistics} from "./Components/Statistics/Statistics";
 import {NewsPage} from "./Components/News/NewsPage";
 import {HealthTestPage} from "./Components/HealthTest/HealthTestPage";
+import {ContactPage} from "./Components/Contact/ContactPage";
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 				<Route path={'/statistics'} component={Statistics}/>
 				<Route path={'/News'} component={NewsPage}/>
 				<Route path={'/health-test'} component={HealthTestPage}/>
+				<Route path={'/contact'} component={ContactPage}/>
 			</>
 		</HashRouter>
 

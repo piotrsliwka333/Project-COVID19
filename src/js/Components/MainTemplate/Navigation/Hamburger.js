@@ -22,7 +22,7 @@ export const Hamburger = () => {
 				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/health-test"} title="Health Test"/>
 				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/statistics"} title="Statistics"/>
 				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/news"} title="News"/>
-				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/purchase"} title="Purchase"/>
+				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/contact"} title="Contact"/>
 			</ul>}
 		</nav>
 	)

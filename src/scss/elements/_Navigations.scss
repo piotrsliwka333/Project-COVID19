@@ -6,8 +6,8 @@
   max-width: 1140px;
   margin: 0 auto;
   background-color: $color-text-first;
-  position: relative;
   z-index: 100;
+
 
   .logo {
     width: 120px;
@@ -26,6 +26,7 @@
 
 
     &-navigation-list {
+      z-index: 101;
       background-color: $color-bcg;
       position: absolute;
       left: 0;
