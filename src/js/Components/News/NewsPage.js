@@ -28,12 +28,14 @@ export const NewsPage = () => {
 
 
 
-	const randomSize = () => {
-		let randomArray = [5,5,5,5,10]
-		let randomNumber = Math.floor((Math.random() * 5) )
 
-		return randomArray[randomNumber]
-	}
+		const randomSize = () => {
+			let randomArray = [5,5,5,5,10]
+			let randomNumber = Math.floor((Math.random() * 5) )
+
+			return randomArray[randomNumber]
+		}
+
 
 
 	const changeRegion = (e) => {
@@ -51,15 +53,29 @@ export const NewsPage = () => {
 
 	const handleChangeDarkTheme = (e) => {
 		if(e.target.checked) {
-
-
 		}
 		setDarkTheme(!darkTheme)
 	}
 
 	const styleDarkTheme = {
 		backgroundColor: darkTheme === true ? 'rgb(33, 35, 36)' : "#cdcaca",
-		color: darkTheme === true ? '#eeeeee' : "rgb(33, 35, 36)"
+		color: darkTheme === true ? '#eeeeee' : "rgb(33, 35, 36)",
+		transition: 'background-color 1000ms linear'
+	}
+
+	// when the title length will be too long it will cut it on last world and add ... at the end
+	const handleArticleLength = (element) => {
+		let fixedTitle = ''
+		let lastIndexOfBreak = 0;
+		if(element.title.length > 100) {
+			lastIndexOfBreak = element.title.slice(0, 100).lastIndexOf(" ");
+		}
+
+		if(element.title.length < 100) {
+			return element.title
+		} else {
+			return `${element.title.slice(0,lastIndexOfBreak)}`
+		}
 	}
 
 
@@ -67,7 +83,7 @@ export const NewsPage = () => {
 
 
 
-
+	// when data loading
 	if(!news) {
 		return (
 			<MainTemplate>
@@ -89,7 +105,7 @@ export const NewsPage = () => {
 						</div>
 					</div>
 					<div className="data-loading">
-						<h2 className="data-loading__circle">Hello</h2>
+						<div className="data-loading__circle"/>
 					</div>
 				</section>
 			</MainTemplate>
@@ -117,24 +133,20 @@ export const NewsPage = () => {
 					<Grid>
 						{news.map((element,index) => {
 							return (
-								<div key={index} className={`news-container col-11 col-md-5 col-xl-${randomSize()}`}>
+								<div key={index} className={`news-container col-11 col-md-5 col-xl-5`}>
 									<figure className="news-image-box">
 										<img  className="news-image" src={element.urlToImage}/>
 									</figure>
-									<a href='#' className="news-title" >{element.title}</a>
+									<a href='#' className="news-title" >{handleArticleLength(element)}</a>
 									<a className="news-read-more" target="_blank" href={element.url}>
 										<i className="fas fa-bookmark"/>
 									</a>
 								</div>
 							)
 						})}
-
 					</Grid>
 				</div>
-
-
 			</section>
 		</MainTemplate>
 	)
-
 }
