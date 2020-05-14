@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 export const HealthScoreAnimation = (props) => {
 	const [score,setScore] = useState(props.healthScore)
@@ -42,7 +43,7 @@ export const HealthScoreAnimation = (props) => {
 				<div className="health-info">
 					<p>Your chance <span>{pointsToShow}%</span> to be a carrier of COVID-19</p>
 					<p>More than 55% ? better to enter our form</p>
-					<a href="#appointment">Enter Form</a>
+					<a href="#">Enter Form</a>
 				</div>
 			</div>
 		</>

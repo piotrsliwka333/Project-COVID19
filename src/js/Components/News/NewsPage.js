@@ -134,7 +134,7 @@ export const NewsPage = () => {
 									<figure className="news-image-box">
 										<img  className="news-image" src={element.urlToImage}/>
 									</figure>
-									<a href='#' className="news-title" >{handleArticleLength(element)}</a>
+									<a href={element.url} target="_blank" className="news-title" >{handleArticleLength(element)}</a>
 									<a className="news-read-more" target="_blank" href={element.url}>
 										<i className="fas fa-bookmark"/>
 									</a>
