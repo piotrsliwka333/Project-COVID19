@@ -45,13 +45,6 @@ export const Statistics = () => {
 		setInputValue('');
 	}
 
-	useEffect(() => {
-		console.log('dane pobrane z API')
-		console.log(dateFromDayOne)
-		console.log(confirmed)
-		console.log(deaths)
-		console.log(recovered)
-	},[dateFromDayOne,confirmed,deaths,recovered])
 
 
 
@@ -61,7 +54,6 @@ export const Statistics = () => {
 		fetch(`https://api.covid19api.com/dayone/country/${country}`)
 			.then(resp => resp.json())
 			.then(data => {
-				console.log(data);
 				let tempDataArray = [];
 				let tempConfirmedArray = [];
 				let tempDeathsArray = [];
@@ -90,7 +82,7 @@ export const Statistics = () => {
 			.catch(err => console.log(err))
 	},[country])
 
-	const chart = (date,numbers,lebel) => {
+	const chart = (date,numbers,label) => {
 		let totalSorting = [];
 		if(total) {
 			totalSorting = numbers
@@ -98,12 +90,11 @@ export const Statistics = () => {
 		} else {
 			totalSorting = sorting(numbers)
 		}
-
 		setCharData({
 			labels: date, // low data
 			datasets: [
 				{
-					label: lebel,  // main title of chart
+					label: label,  // main title of chart
 					data: totalSorting, // points on a chart
 					backgroundColor: [   // color of chart
 						'rgba(75,192,192,0.6)'

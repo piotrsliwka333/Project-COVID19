@@ -9,10 +9,7 @@ export const NewsPage = () => {
 	const [settings,setSettings] = useState(false)
 	const [darkTheme,setDarkTheme] = useState(false)
 
-
-
 	useEffect(() => {
-
 		fetch(`http://newsapi.org/v2/top-headlines?country=${country}&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0`,{
 			method: 'GET'
 		})
