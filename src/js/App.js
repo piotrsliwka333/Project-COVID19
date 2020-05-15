@@ -3,6 +3,7 @@ import React,{Component} from "react";
 import ReactDOM from "react-dom";
 import {MainTemplate} from "./Components/MainTemplate/MainTemplate";
 import {HashRouter,Route} from "react-router-dom";
+import {HashLink} from 'react-router-hash-link';
 import {HomePage} from "./Components/HomePage/Main";
 import {Statistics} from "./Components/Statistics/Statistics";
 import {NewsPage} from "./Components/News/NewsPage";

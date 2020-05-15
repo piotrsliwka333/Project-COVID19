@@ -45,7 +45,8 @@ export const Statistics = () => {
 
 
 	//function which is added on form when sombe body click  the button or press enter it will download which country and will sent request
-	const handleSubmit = () => {
+	const handleSubmit = (e) => {
+		e.preventDefault()
 		console.log(inputValue)
 		setCountry(inputValue)
 		setInputValue('');
@@ -158,8 +159,6 @@ export const Statistics = () => {
 		setParamsToShow(deaths)
 		setTotal(false)
 	}
-
-
 
 
 	return (

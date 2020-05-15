@@ -150,10 +150,10 @@
       // animation after done test
 
       .progress-bar {
-        padding: 0 10px;
+        padding: 0 5px;
         width: 80%;
         background-color: black;
-        height: 6rem;
+        height: 5rem;
         color: #eeeeee;
         border-radius: 3rem;
         position: relative;
@@ -213,8 +213,8 @@
           align-items: center;
 
           @include desktop {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
 
           }
 
