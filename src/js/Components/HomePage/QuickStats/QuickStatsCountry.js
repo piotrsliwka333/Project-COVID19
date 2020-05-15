@@ -1,37 +1,13 @@
 import React, {useEffect, useState} from "react";
 
-export const QuickStatsCountry = () => {
-	const [countries,setCountries] = useState(false)
-	const [selectedCountry,setSelectedCountry] = useState({
-		"Country": "Afghanistan",
-		"CountryCode": "AF",
-		"Slug": "afghanistan",
-		"NewConfirmed": 255,
-		"TotalConfirmed": 4033,
-		"NewDeaths": 6,
-		"TotalDeaths": 115,
-		"NewRecovered": 30,
-		"TotalRecovered": 502,
-		"Date": "2020-05-10T20:34:54Z"
-	})
+export const QuickStatsCountry = ({data}) => {
+	const [countries,setCountries] = useState(data.Countries)
+	const [selectedCountry,setSelectedCountry] = useState(data.Countries[133])
 	const [country, setCountry] = useState("") // here we save value  by input
-	const [flag,setFlag] = useState('af')
+	const [flag,setFlag] = useState('pl')
 	const [error,setError] = useState(false)
 
 
-
-	useEffect(() => {
-		fetch('https://api.covid19api.com/summary',{
-			method: "GET"
-		})
-			.then(resp => resp.json())
-			.then(data => {
-				console.log(data)
-				setCountries(data.Countries)
-			})
-			.catch(err => console.log(err))
-
-	},[])
 
 
 	const countriess = [
@@ -94,17 +70,18 @@ export const QuickStatsCountry = () => {
 				setSelectedCountry(selectedCountry)
 				const tolowerCountryCode = selectedCountry.CountryCode.toLocaleLowerCase();
 				setFlag(tolowerCountryCode) // here we set property for flag
-
-
 				setCountry("")
 			}
-
 		}
-
 	//pl mean country which we wanna to show
 
 
 
+	if(!countries) return (
+		<div className="data-loading">
+			<div className="data-loading__circle"/>
+		</div>
+	)
 
 
 	return (

@@ -21,9 +21,6 @@ export const HomePage = () => {
 					<Grid>
 						<HealthTest/>
 						<QuickStats>
-							<QuickStatsTitle/>
-							<QuickStatsCountry/>
-							<QuickStatsWorld/>
 						</QuickStats>
 						<AppointmentForm/>
 				</Grid>

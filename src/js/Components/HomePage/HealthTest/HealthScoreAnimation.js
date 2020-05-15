@@ -19,6 +19,10 @@ export const HealthScoreAnimation = (props) => {
 			setPoints(prevState => prevState + 1)
 			setPointsToShow(prevState => prevState + 1)
 		},50)
+
+		return () => {
+			clearInterval(interval)
+		}
 	},[])
 
 	useEffect(() => {

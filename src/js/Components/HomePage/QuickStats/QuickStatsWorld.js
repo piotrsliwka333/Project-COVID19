@@ -1,14 +1,7 @@
 import React, {useEffect, useState} from "react";
 
-export const QuickStatsWorld = () => {
-	const [global,setGlobal] = useState({
-		"NewConfirmed": 98580,
-		"TotalConfirmed": 5498088,
-		"NewDeaths": 4296,
-		"TotalDeaths": 367155,
-		"NewRecovered": 33350,
-		"TotalRecovered": 1408329
-	})
+export const QuickStatsWorld = ({data}) => {
+	const [global,setGlobal] = useState(data.Global)
 
 	const world = {
 			"NewConfirmed": 98580,
@@ -18,23 +11,6 @@ export const QuickStatsWorld = () => {
 			"NewRecovered": 33350,
 			"TotalRecovered": 1408329
 		};
-
-	useEffect(() => {
-		fetch('https://api.covid19api.com/summary',{
-			method: "GET"
-		})
-			.then(resp => resp.json())
-			.then(data => {
-				console.log(data.Global)
-				setGlobal(data.Global)
-			})
-			.catch(err => console.log(err))
-
-	},[])
-
-
-
-
 
 	return (
 		<>
