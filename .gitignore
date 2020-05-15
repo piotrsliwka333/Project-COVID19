@@ -27,6 +27,3 @@ node_modules/
 .test/
 .solution
 
-webpack.config.js
-package.json
-.babelrc

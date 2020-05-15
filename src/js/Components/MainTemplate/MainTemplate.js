@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Navigation} from "./Navigation";
 import {Footer} from "./Footer";
 
 export const MainTemplate  = (props) => {
+
 
 	return (
 		<>

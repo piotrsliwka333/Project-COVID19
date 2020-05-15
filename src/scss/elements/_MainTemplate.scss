@@ -2,9 +2,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.normal {
+  border-bottom: 2px solid gray;
+  background-color: $color-text-first;
+  transition: 1s;
+}
+
+.scrolled {
+  background-color: #02203c;
+  transition: 1s;
+}
+
 header {
   border-bottom: 2px solid gray;
   background-color: $color-text-first;
+
 }
 
 main {
