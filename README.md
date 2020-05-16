@@ -14,6 +14,8 @@ click chose in nav Section Statistics where you can find big chart with a few op
 informations associated with Covid-19. At the end you can also fill out the contact form
 if you fill really bad to contact with your goverment.
 
+DEMO
+
 
 
   
