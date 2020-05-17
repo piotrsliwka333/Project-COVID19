@@ -9,20 +9,12 @@
       "gender": "male"
     },
     {
-      "name": "Piotr Śliwka",
+      "name": "Piotr",
       "surname": "Śliwka",
       "phone": "792957471",
       "email": "piotrsliwka333@gmail.com",
       "city": "Wrocław",
       "id": 2
-    },
-    {
-      "name": "Piotr Śliwka",
-      "surname": "Śliwka",
-      "phone": "792957471",
-      "email": "piotrsliwka333@gmail.com",
-      "city": "Wrocław",
-      "id": 3
     }
   ]
 }

@@ -14,8 +14,38 @@ click chose in nav Section Statistics where you can find big chart with a few op
 informations associated with Covid-19. At the end you can also fill out the contact form
 if you fill really bad to contact with your goverment.
 
-DEMO
+###DEMO
+Statistics
+![statistics](src/images/statistics.png)
+
+Health Test and Quick Stats
+![health Test](src/images/healthTest.png)
+
+Form
+![form](src/images/appointment.png)
+
+News
+![news](src/images/news.png)
 
 
+## Setup
+How to start:
 
-  
+To start development follow this instruction:
+
+* `clone` this repo
+* `npm install` all necessary npm packages
+* `npm start` project
+* `npm run rest` to start you local json server (after completing the form personal details will add to the json server)
+
+## Technologies
+* React
+* React Router
+* ES6
+* SASS
+* HTML 
+* JSON Server
+* fetch
+ 
+ ## Contact
+ Created by Piotr Śliwka. Feel free to contact me! 
