@@ -5,11 +5,11 @@ export const News = () => {
 	const [news,setNews] = useState(false)
 	const API_URL = 'http://newsapi.org/v2/top-headlines?country=pl&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0'
 
-
+	let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 	useEffect(() => {
 
-		fetch('https://newsapi.org/v2/top-headlines?country=pl&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0',{
+		fetch(`${proxyUrl}https://newsapi.org/v2/top-headlines?country=pl&category=health&apiKey=4576f91fb26c4904bb121c124fc905e0`,{
 			method: 'GET'
 		})
 			.then(resp => resp.json())
