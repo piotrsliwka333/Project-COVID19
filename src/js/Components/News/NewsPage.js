@@ -16,7 +16,6 @@ export const NewsPage = () => {
 			.then(resp => resp.json())
 			.then(data => {
 				setNews(data.articles)
-				console.log(data)
 			})
 
 			.catch(err => console.log(err))
@@ -129,17 +128,19 @@ export const NewsPage = () => {
 					</div>
 					<Grid>
 						{news.map((element,index) => {
-							return (
-								<div key={index} className={`news-container col-11 col-md-5 col-xl-5`}>
-									<figure className="news-image-box">
-										<img  className="news-image" src={element.urlToImage}/>
-									</figure>
-									<a href={element.url} target="_blank" className="news-title" >{handleArticleLength(element)}</a>
-									<a className="news-read-more" target="_blank" href={element.url}>
-										<i className="fas fa-bookmark"/>
-									</a>
-								</div>
-							)
+							if(element.urlToImage !== null) {
+								return (
+									<div key={index} className={`news-container col-11 col-md-5 col-xl-5`}>
+										<figure className="news-image-box">
+											<img className="news-image" src={element.urlToImage}/>
+										</figure>
+										<a href={element.url} target="_blank" className="news-title">{handleArticleLength(element)}</a>
+										<a className="news-read-more" target="_blank" href={element.url}>
+											<i className="fas fa-bookmark"/>
+										</a>
+									</div>
+								)
+							}
 						})}
 					</Grid>
 				</div>

@@ -104,8 +104,6 @@ export const AppointmentForm = () => {
 				}
 			});
 		};
-
-	console.log(errors.length)
 	return (
 		<article id="appointment"  className="appointment col-10 col-md-6 col-xl-7">
 			<h3 className="appointment__title">Make an Appointment</h3>

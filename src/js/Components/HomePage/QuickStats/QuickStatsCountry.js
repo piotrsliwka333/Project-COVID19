@@ -63,7 +63,7 @@ export const QuickStatsCountry = ({data}) => {
 				setError(true)
 				setCountry('');
 
-				console.log(error)
+
 			}  else if (typeof selectedCountry  === "object") {
 				setError(false)
 

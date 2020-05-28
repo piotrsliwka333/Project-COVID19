@@ -47,13 +47,11 @@ export const Statistics = () => {
 	//function which is added on form when sombe body click  the button or press enter it will download which country and will sent request
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(inputValue)
 		setCountry(inputValue)
 		setInputValue('');
 	}
 
 	useEffect(() => {
-		console.log(country);
 		fetch(`https://api.covid19api.com/dayone/country/${country}`)
 			.then(resp => resp.json())
 			.then(data => {
