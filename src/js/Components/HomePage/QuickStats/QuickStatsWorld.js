@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
+import worldd from '../../../../assets/worldd.png'
 
 export const QuickStatsWorld = ({data}) => {
 	const [global,setGlobal] = useState(data.Global)
+
 
 	const world = {
 			"NewConfirmed": 98580,
@@ -15,7 +17,7 @@ export const QuickStatsWorld = ({data}) => {
 	return (
 		<>
 			<div className="quick-stats__logo-container">
-				<img className={"quick-stats__logo-container-world"} src="../../../../assets/worldd.png"/>
+				<img className={"quick-stats__logo-container-world"} src={worldd}/>
 				<span className="quick-stats__logo-container-name">World</span>
 			</div>
 			<div className="quick-stats__box">

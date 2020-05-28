@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import logo from '../../../../assets/logo.png'
+import hamburger from '../../../../assets/hamburger.svg'
 
 export const Hamburger = () => {
 	const [showMenu,setShowMenu] = useState(false)
@@ -12,11 +14,11 @@ export const Hamburger = () => {
 
 	return (
 		<nav className="hamburger-navigation">
-		<img onClick={handleClick} className="hamburger" src="../../../../assets/hamburger.svg"/>
+		<img onClick={handleClick} className="hamburger" src={hamburger}/>
 			{showMenu && <ul className="hamburger-navigation-list">
 				<li className="hamburger-navigation-list__maintenance">
 					<button onClick={handleClick} className="hamburger-navigation-list__maintenance-btn ">X</button>
-					<Link className="hamburger-navigation-list__maintenance-logo" to={'/'}><img  onClick={handleClick} src='../../../../assets/logo.png'/></Link>
+					<Link className="hamburger-navigation-list__maintenance-logo" to={'/'}><img  onClick={handleClick} src={logo}/></Link>
 					<p className="hamburger-navigation-list__maintenance-info">Your guide during the epidemic time</p>
 				</li>
 				<HamburgerNavigationElement closeHamburgerMenu={handleClick} link={"/health-test"} title="Health Test"/>
