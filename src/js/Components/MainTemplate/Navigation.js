@@ -8,14 +8,10 @@ export const Navigation  = () => {
 
 // 462x207
 	return (
-		<HashRouter>
 			<div className="navigation-container">
 				<Logo/>
 				<Hamburger/>
 				<DesktopNavigation/>
 			</div>
-		</HashRouter>
-
-
 	)
 }

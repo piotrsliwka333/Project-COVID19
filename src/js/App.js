@@ -2,7 +2,7 @@ import "../scss/main.scss"
 import React,{Component} from "react";
 import ReactDOM from "react-dom";
 import {MainTemplate} from "./Components/MainTemplate/MainTemplate";
-import {HashRouter,Route} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route} from "react-router-dom";
 import {HashLink} from 'react-router-hash-link';
 import {HomePage} from "./Components/HomePage/Main";
 import {Statistics} from "./Components/Statistics/Statistics";
@@ -12,7 +12,7 @@ import {ContactPage} from "./Components/Contact/ContactPage";
 
 const App = () => {
 	return (
-		<HashRouter>
+		<BrowserRouter>
 			<>
 				<Route exact path={'/'} component={HomePage}/>
 				<Route path={'/statistics'} component={Statistics}/>
@@ -20,7 +20,7 @@ const App = () => {
 				<Route path={'/health-test'} component={HealthTestPage}/>
 				<Route path={'/contact'} component={ContactPage}/>
 			</>
-		</HashRouter>
+		</BrowserRouter>
 
 	)
 }
