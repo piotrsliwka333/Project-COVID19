@@ -12,7 +12,7 @@ import {ContactPage} from "./Components/Contact/ContactPage";
 
 const App = () => {
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<>
 				<Route exact path={'/'} component={HomePage}/>
 				<Route path={'/statistics'} component={Statistics}/>
@@ -20,7 +20,7 @@ const App = () => {
 				<Route path={'/health-test'} component={HealthTestPage}/>
 				<Route path={'/contact'} component={ContactPage}/>
 			</>
-		</BrowserRouter>
+		</HashRouter>
 
 	)
 }
