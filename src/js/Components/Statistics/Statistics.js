@@ -1,29 +1,28 @@
 import React, {useEffect, useState} from "react";
 import {MainTemplate} from "../MainTemplate/MainTemplate";
-import {Line} from 'react-chartjs-2'
 import {StatisticsSettings} from "./StatisticsSettings";
 import {StatisticsSettingsOption} from "./StatisticsSettingsOption";
 import {StatisticsSettingsCountryPicker} from "./StatisticsSettingsCountryPicker";
 import {StatisticsChart} from "./StatisticsChart";
 
 export const Statistics = () => {
-	const [chartData,setCharData] = useState({})
+	const [chartData, setCharData] = useState({})
 	//settings
 
-	const [country,setCountry] = useState('poland')
+	const [country, setCountry] = useState('poland')
 
 	//buttons indicates which properties selected user
-	const [confirmed,setConfirmed] = useState([])
-	const [recovered,setRecovered] = useState([])
-	const [deaths,setDeaths] = useState([])
-	const [dateFromDayOne,setDateFromDayOne] = useState([])
-	const [flag,setFlag] = useState('pl')
-	const [inputValue,setInputValue] = useState('')
+	const [confirmed, setConfirmed] = useState([])
+	const [recovered, setRecovered] = useState([])
+	const [deaths, setDeaths] = useState([])
+	const [dateFromDayOne, setDateFromDayOne] = useState([])
+	const [flag, setFlag] = useState('pl')
+	const [inputValue, setInputValue] = useState('')
 
-	const [dateToShow,setDateToShow] = useState([])
-	const [paramsToShow,setParamsToShow] = useState([])
-	const [labelChartName,setLabelChartName] = useState('Confirmed people per One Day')
-	const [total,setTotal] = useState(false)
+	const [dateToShow, setDateToShow] = useState([])
+	const [paramsToShow, setParamsToShow] = useState([])
+	const [labelChartName, setLabelChartName] = useState('Confirmed people per One Day')
+	const [total, setTotal] = useState(false)
 
 
 	//algorithm to sort how many deaths,confirmed or recovered was per day
@@ -32,8 +31,8 @@ export const Statistics = () => {
 		let sortedArray = [];
 		let sum = array[0]
 		sortedArray[0] = array[0]
-		for(let i = 1; i < array.length; i++) {
-			sortedArray.push( (array[i-1] - array[i])* (-1) )
+		for (let i = 1; i < array.length; i++) {
+			sortedArray.push((array[i - 1] - array[i]) * (-1))
 		}
 		return sortedArray;
 	}
@@ -62,7 +61,7 @@ export const Statistics = () => {
 				let tempFlag = ''
 
 				data.forEach(element => {
-					tempDataArray.push(element.Date.slice(0,10));
+					tempDataArray.push(element.Date.slice(0, 10));
 					tempConfirmedArray.push(element.Confirmed)
 					tempDeathsArray.push(element.Deaths)
 					tempRecoveredArray.push(element.Recovered)
@@ -80,11 +79,11 @@ export const Statistics = () => {
 
 			})
 			.catch(err => console.log(err))
-	},[country])
+	}, [country])
 
-	const chart = (date,numbers,label) => {
+	const chart = (date, numbers, label) => {
 		let totalSorting = [];
-		if(total) { // it mean that when somebody set total it download data and just only save it to variable total Sorting
+		if (total) { // it mean that when somebody set total it download data and just only save it to variable total Sorting
 			totalSorting = numbers
 
 		} else {
@@ -109,9 +108,9 @@ export const Statistics = () => {
 
 	useEffect(() => {
 
-			chart(dateToShow,paramsToShow,labelChartName);
+		chart(dateToShow, paramsToShow, labelChartName);
 
-	},[paramsToShow,total])
+	}, [paramsToShow, total])
 
 
 	// functions which change states when somebody press the button for instance Confirmed perDay or Total Deaths
@@ -163,8 +162,9 @@ export const Statistics = () => {
 		<MainTemplate>
 			<section className="statistics">
 				<StatisticsChart chartData={chartData}/>
-				<StatisticsSettings >
-					<StatisticsSettingsCountryPicker choseCountry={handleSubmit} flag={flag} country={inputValue} setCountry={handleChangeValue}/>
+				<StatisticsSettings>
+					<StatisticsSettingsCountryPicker choseCountry={handleSubmit} flag={flag} country={inputValue}
+					                                 setCountry={handleChangeValue}/>
 					<StatisticsSettingsOption title="Confirmed" onTotal={handleTotalConfirmed} onPerDay={handlePerDayConfirmed}/>
 					<StatisticsSettingsOption title="Recovered" onTotal={handleTotalRecovered} onPerDay={handlePerDayRecovered}/>
 					<StatisticsSettingsOption title="Deaths" onTotal={handleTotalDeaths} onPerDay={handlePerDayDeaths}/>

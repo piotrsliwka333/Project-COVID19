@@ -4,9 +4,6 @@ import {AppointmentForm} from "../HomePage/AppointmentForm/AppointmentForm";
 
 export const ContactPage = () => {
 
-
-
-
 	return (
 		<MainTemplate>
 			<section className="contact">

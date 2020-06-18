@@ -19,6 +19,7 @@
   .hamburger {
     width: 20px;
     height: 20px;
+    cursor: pointer;
 
     @include desktop {
       display: none;

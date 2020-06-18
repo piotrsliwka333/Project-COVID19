@@ -6,7 +6,7 @@ export const StatisticsSettingsCountryPicker = ({choseCountry, flag, country, se
 
 	return (
 		<div className="statistics-box">
-			<div className="statistics-box__country" >
+			<div className="statistics-box__country">
 				<img className="statistics-box__country-flag" src={`https://www.countryflags.io/${flag}/shiny/64.png`}/>
 				<span className="statistics-box__country-name">Country</span>
 			</div>

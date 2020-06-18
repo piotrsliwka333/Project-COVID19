@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import {HashLink} from 'react-router-hash-link';
+
 export const HealthScoreAnimation = (props) => {
 	const [score,setScore] = useState(props.healthScore)
 	const [points, setPoints] = useState(50 - props.healthScore * 5)

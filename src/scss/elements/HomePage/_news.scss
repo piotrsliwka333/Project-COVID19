@@ -1,11 +1,32 @@
 .news {
-  margin-top: 60px;
-
+  padding-top: 60px;
+  position: relative;
   &__title {
     font-size: 7rem;
     text-align: center;
     color: $color-main-title;
     margin-bottom: 20px;
+  }
+
+  .control-panel__settings {
+    position: absolute;
+    top: 10px;
+    right: 2%;
+    .control-panel__settings-language {
+      color: #02203c;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 2rem;
+      padding: 5px;
+      background: transparent;
+      border: none;
+      &:hover {
+        color: lighten(#02203c,10%);
+      }
+      &:active {
+        color: lighten(#02203c,20%);
+      }
+    }
   }
 
   .container {
@@ -15,53 +36,68 @@
   .row {
     justify-content: space-evenly;
   }
-
-
   .news-container {
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.6) 0 2rem 2rem;
-    margin: 20px 5px;
     position: relative;
+    margin: 20px 10px;
+  }
+  .news-image-box {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: $color-box-shadow;
 
-    figure {
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 */
-      position: relative;
+    .news-image {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
       width: 100%;
-
-      img {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        border-radius: 10px;
-        filter: brightness(60%);
-      }
-    }
-    p {
-      position: absolute;
-      top: 60%;
-      left: 10%;
-      color: #eeeeee;
-      font-size: 3vw;
-      text-shadow: 1px 1px 1px gray;
-      @include tablet {
-        font-size: 2rem;
-      }
-    }
-
-    a {
-      text-shadow: 1px 1px 1px black;
-      color: gray;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 2em;
-      position: absolute;
-      bottom: 10%;
-      right: 20%;
+      filter: brightness(40%);
+      border-radius: 20px;
     }
 
   }
 
+  .news-title {
+    font-family: 'Mukta', sans-serif;
+    text-decoration: none;
+    position: absolute;
+    font-size: 3.5vw;
+    color: floralwhite;
+    top: 60%;
+    width: 80%;
+    left: 10%;
+    text-shadow: 2px 2px 3px #1F2B35;
+    text-align: center;
+    font-weight: 400;
+    @include tablet {
+      font-size: 2.2vw;
+    }
+    @include desktop {
+      font-size: 1.6vw;
+    }
+
+  }
+
+  .news-read-more {
+    text-decoration: none;
+    position: absolute;
+    color: gray;
+    font-size: 3rem;
+    top: 20px;
+    right: 20px;
+    color: #02203c;
+    font-weight: bold;
+
+    .fas {
+      color: gray;
+      position: relative;
+      transition: 1s;
+    }
+    .fas:hover {
+      transform: rotate(40deg);
+    }
+  }
 }

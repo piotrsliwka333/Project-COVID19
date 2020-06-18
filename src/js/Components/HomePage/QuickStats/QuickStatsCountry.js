@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 export const QuickStatsCountry = ({data}) => {
-	const [countries,setCountries] = useState(data.Countries)
-	const [selectedCountry,setSelectedCountry] = useState(data.Countries[133])
+	const [countries, setCountries] = useState(data.Countries)
+	const [selectedCountry, setSelectedCountry] = useState(data.Countries[133])
 	const [country, setCountry] = useState("") // here we save value  by input
-	const [flag,setFlag] = useState('pl')
-	const [error,setError] = useState(false)
-
-
+	const [flag, setFlag] = useState('pl')
+	const [error, setError] = useState(false)
 
 
 	const countriess = [
@@ -53,31 +51,30 @@ export const QuickStatsCountry = ({data}) => {
 	}
 
 
-		const handleSelect = (e,country) => {
+	const handleSelect = (e, country) => {
 		e.preventDefault();
 
-			// here we filter all elements and select only one by input value and press button
-			const [selectedCountry] = countries.filter(element => element.CountryCode === country.toUpperCase() || element.Slug === country.toLowerCase())
+		// here we filter all elements and select only one by input value and press button
+		const [selectedCountry] = countries.filter(element => element.CountryCode === country.toUpperCase() || element.Slug === country.toLowerCase())
 
-			if (typeof selectedCountry === "undefined") {
-				setError(true)
-				setCountry('');
+		if (typeof selectedCountry === "undefined") {
+			setError(true)
+			setCountry('');
 
 
-			}  else if (typeof selectedCountry  === "object") {
-				setError(false)
+		} else if (typeof selectedCountry === "object") {
+			setError(false)
 
-				setSelectedCountry(selectedCountry)
-				const tolowerCountryCode = selectedCountry.CountryCode.toLocaleLowerCase();
-				setFlag(tolowerCountryCode) // here we set property for flag
-				setCountry("")
-			}
+			setSelectedCountry(selectedCountry)
+			const tolowerCountryCode = selectedCountry.CountryCode.toLocaleLowerCase();
+			setFlag(tolowerCountryCode) // here we set property for flag
+			setCountry("")
 		}
+	}
 	//pl mean country which we wanna to show
 
 
-
-	if(!countries) return (
+	if (!countries) return (
 		<div className="data-loading">
 			<div className="data-loading__circle"/>
 		</div>
@@ -91,9 +88,10 @@ export const QuickStatsCountry = ({data}) => {
 					<img className="quick-stats__box-country-flag" src={`https://www.countryflags.io/${flag}/flat/64.png`}/>
 					<span className="quick-stats__box-country-name">{selectedCountry.Country}</span>
 				</div>
-				<form onSubmit={(e) => handleSelect(e,country)} className="quick-stats__box-country">
-					<input type="text" value={country} onChange={changeCountry} className="quick-stats__box-country-select" placeholder="chose country"/>
-					<button type="submit" className="quick-stats__box-country-select-btn" >select country</button>
+				<form onSubmit={(e) => handleSelect(e, country)} className="quick-stats__box-country">
+					<input type="text" value={country} onChange={changeCountry} className="quick-stats__box-country-select"
+					       placeholder="norway , germany etc."/>
+					<button type="submit" className="quick-stats__box-country-select-btn">select country</button>
 				</form>
 			</div>
 			<div className="quick-stats__box">

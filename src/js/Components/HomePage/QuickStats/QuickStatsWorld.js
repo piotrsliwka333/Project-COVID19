@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import worldd from '../../../../assets/worldd.png'
 
 export const QuickStatsWorld = ({data}) => {
-	const [global,setGlobal] = useState(data.Global)
+	const [global, setGlobal] = useState(data.Global)
 
 
 	const world = {
-			"NewConfirmed": 98580,
-			"TotalConfirmed": 5498088,
-			"NewDeaths": 4296,
-			"TotalDeaths": 367155,
-			"NewRecovered": 33350,
-			"TotalRecovered": 1408329
-		};
+		"NewConfirmed": 98580,
+		"TotalConfirmed": 5498088,
+		"NewDeaths": 4296,
+		"TotalDeaths": 367155,
+		"NewRecovered": 33350,
+		"TotalRecovered": 1408329
+	};
 
 	return (
 		<>

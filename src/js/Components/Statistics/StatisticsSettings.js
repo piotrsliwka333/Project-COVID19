@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 export const StatisticsSettings = (props) => {
 
 	return (

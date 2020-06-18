@@ -4,12 +4,11 @@ import {QuickStatsCountry} from "./QuickStatsCountry";
 import {QuickStatsWorld} from "./QuickStatsWorld";
 
 
-
 export const QuickStats = () => {
-	const [data,setData] = useState(false)
+	const [data, setData] = useState(false)
 
 	useEffect(() => {
-		fetch('https://api.covid19api.com/summary',{
+		fetch('https://api.covid19api.com/summary', {
 			method: "GET"
 		})
 			.then(resp => resp.json())
@@ -18,8 +17,7 @@ export const QuickStats = () => {
 			})
 			.catch(err => console.log(err))
 
-	},[])
-
+	}, [])
 
 
 	if (!data) return (
@@ -32,7 +30,7 @@ export const QuickStats = () => {
 	)
 
 	return (
-		<article className="quick-stats col-10 col-md-5 col-xl-4" >
+		<article className="quick-stats col-10 col-md-5 col-xl-4">
 			<QuickStatsTitle/>
 			<QuickStatsCountry data={data}/>
 			<QuickStatsWorld data={data}/>

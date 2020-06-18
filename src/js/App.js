@@ -1,9 +1,7 @@
 import "../scss/main.scss"
-import React,{Component} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import {MainTemplate} from "./Components/MainTemplate/MainTemplate";
 import {BrowserRouter, HashRouter, Route} from "react-router-dom";
-import {HashLink} from 'react-router-hash-link';
 import {HomePage} from "./Components/HomePage/Main";
 import {Statistics} from "./Components/Statistics/Statistics";
 import {NewsPage} from "./Components/News/NewsPage";
@@ -24,7 +22,6 @@ const App = () => {
 
 	)
 }
-
 
 
 ReactDOM.render(
