@@ -2,37 +2,32 @@ import React, {useEffect, useState} from "react";
 import {HashLink} from 'react-router-hash-link';
 
 export const HealthScoreAnimation = (props) => {
-	const [score,setScore] = useState(props.healthScore)
+	const [score, setScore] = useState(props.healthScore)
 	const [points, setPoints] = useState(50 - props.healthScore * 5)
-	const [timer,setTimer] = useState(0)
-	const [pointsToShow,setPointsToShow] = useState(0)
-
+	const [timer, setTimer] = useState(0)
+	const [pointsToShow, setPointsToShow] = useState(0)
 
 	const style = {
 		borderColor: pointsToShow < 60 ? "green" : pointsToShow >= 60 && pointsToShow <= 70 ? "yellow" : "orange"
 	}
 
-
 	useEffect(() => {
-		const interval = setInterval(()=> {
+		const interval = setInterval(() => {
 			setTimer(interval)
 			setPoints(prevState => prevState + 1)
 			setPointsToShow(prevState => prevState + 1)
-		},50)
+		}, 50)
 
 		return () => {
 			clearInterval(interval)
 		}
-	},[])
+	}, [])
 
 	useEffect(() => {
-		if(points === 100){
+		if (points === 100) {
 			clearInterval(timer)
 		}
-	},[points])
-
-
-
+	}, [points])
 
 	return (
 		<>
@@ -51,9 +46,5 @@ export const HealthScoreAnimation = (props) => {
 				</div>
 			</div>
 		</>
-
-
-
-
 	)
 }

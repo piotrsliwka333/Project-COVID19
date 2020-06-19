@@ -1,8 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export const DesktopNavigation = () => {
-
 	return (
 		<nav className="desktop-navigation">
 			<ul className="desktop-navigation-list">
@@ -17,6 +16,7 @@ export const DesktopNavigation = () => {
 
 const DesktopNavigationElement = ({link, title}) => {
 	return (
-		<li><Link className="desktop-navigation-list__element" to={`${link}`}>{title}</Link></li>
+		<li><NavLink className="desktop-navigation-list__element " activeClassName='active' to={`${link}`}>{title}</NavLink>
+		</li>
 	)
 }

@@ -8,6 +8,29 @@
     margin-bottom: 20px;
   }
 
+  .data-loading {
+    height: 774px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__circle {
+
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid lightgray;
+      border-top-color: coral;
+      animation: spinner 0.7s linear infinite;
+    }
+  }
+
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .control-panel__settings {
     position: absolute;
     top: 10px;

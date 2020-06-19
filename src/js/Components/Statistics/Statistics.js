@@ -8,9 +8,7 @@ import {StatisticsChart} from "./StatisticsChart";
 export const Statistics = () => {
 	const [chartData, setCharData] = useState({})
 	//settings
-
 	const [country, setCountry] = useState('poland')
-
 	//buttons indicates which properties selected user
 	const [confirmed, setConfirmed] = useState([])
 	const [recovered, setRecovered] = useState([])
@@ -18,15 +16,13 @@ export const Statistics = () => {
 	const [dateFromDayOne, setDateFromDayOne] = useState([])
 	const [flag, setFlag] = useState('pl')
 	const [inputValue, setInputValue] = useState('')
-
 	const [dateToShow, setDateToShow] = useState([])
 	const [paramsToShow, setParamsToShow] = useState([])
 	const [labelChartName, setLabelChartName] = useState('Confirmed people per One Day')
 	const [total, setTotal] = useState(false)
-
+	const [dataError, setDataError] = useState(false)
 
 	//algorithm to sort how many deaths,confirmed or recovered was per day
-
 	const sorting = (array) => {
 		let sortedArray = [];
 		let sum = array[0]
@@ -41,7 +37,6 @@ export const Statistics = () => {
 	const handleChangeValue = (e) => {
 		setInputValue(e.target.value.toLowerCase())
 	}
-
 
 	//function which is added on form when sombe body click  the button or press enter it will download which country and will sent request
 	const handleSubmit = (e) => {
@@ -59,14 +54,12 @@ export const Statistics = () => {
 				let tempDeathsArray = [];
 				let tempRecoveredArray = [];
 				let tempFlag = ''
-
 				data.forEach(element => {
 					tempDataArray.push(element.Date.slice(0, 10));
 					tempConfirmedArray.push(element.Confirmed)
 					tempDeathsArray.push(element.Deaths)
 					tempRecoveredArray.push(element.Recovered)
 					tempFlag = element.CountryCode
-
 				})
 				setDateFromDayOne(prevState => tempDataArray)
 				setConfirmed(prevState => tempConfirmedArray)
@@ -75,10 +68,8 @@ export const Statistics = () => {
 				setFlag(tempFlag)
 				setDateToShow(prevState => tempDataArray)
 				setParamsToShow(prevState => tempConfirmedArray)
-
-
 			})
-			.catch(err => console.log(err))
+			.catch(err => setDataError(false))
 	}, [country])
 
 	const chart = (date, numbers, label) => {
@@ -105,13 +96,9 @@ export const Statistics = () => {
 	}
 
 	// this useEffect run chart when one of params such as paramsToShow or total will change // total mean total or perDay
-
 	useEffect(() => {
-
 		chart(dateToShow, paramsToShow, labelChartName);
-
 	}, [paramsToShow, total])
-
 
 	// functions which change states when somebody press the button for instance Confirmed perDay or Total Deaths
 	const handleTotalConfirmed = (e) => {
@@ -156,7 +143,6 @@ export const Statistics = () => {
 		setParamsToShow(deaths)
 		setTotal(false)
 	}
-
 
 	return (
 		<MainTemplate>

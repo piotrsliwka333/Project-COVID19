@@ -26,13 +26,6 @@ export const Purchase = () => {
 		})
 	}, [])
 
-
-	const style = {
-		color: "red"
-	}
-
-	// <div className={"hello"} ref={container}/>
-	// <p  style={style} className="test"></p>
 	return (
 		<>
 			<div className="purchase-box col-10 col-md-5 col-xl-5">
@@ -52,5 +45,4 @@ export const Purchase = () => {
 			</div>
 		</>
 	)
-
 }

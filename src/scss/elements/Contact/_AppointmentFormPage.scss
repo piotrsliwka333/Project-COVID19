@@ -2,87 +2,166 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.appointment {
-  width: 80%;
-  margin: 70px 0;
-  border-radius: 20px;
-  box-shadow: 0 1rem 2rem 1rem #626ee3;
-  @include desktop {
-    width: 50%;
-  }
+  .appointment {
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow:  0 1rem 2rem 1rem #626ee3;
 
-  &__title {
-    color: #626ee3;
-    font-weight: bold;
-    font-size: 3.5rem;
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 4px solid #626ee3;
-  }
 
-  &__box {
-    padding: 20px 0;
-    background-color: ghostwhite;
-    border-radius: 0 0 20px 20px;
-    display: flex;
+    &__title {
+      color: #626ee3;
+      font-weight: bold;
+      font-size: 3.5rem;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom:  4px solid #626ee3;
+    }
 
-    .appointment-animation {
-      display: none;
-      width: 40%;
-      align-self: start;
-      flex-grow: 1;
+    @keyframes  hideForm{
+      0% {transform: translateX(0) scale(1)}
+      20% {transform: translateX(20%) scale(0.9)}
+      40%{transform: translateX(0) scale(0.8)}
+      60% {transform: translateX(-20%) scale(0.7)}
+      80% {transform: translateX(-80%) scale(0.6)}
+      100% {transform: translateX(-120%) scale(0.5); border-radius: 50%}
+    }
+    .form-sent {
+      animation-name: hideForm;
+      animation-timing-function: linear;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes showSpan {
+      0% {opacity: 0}
+      100% {opacity: 1}
+    }
 
-      @include desktop {
-        display: block;
+    @keyframes changeColor {
+      0% {color: greenyellow}
+      100% {color: green}
+    }
+    .info-message {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      top: 50%;
+      font-size: 5rem;
+      color: greenyellow;
+      transition: 1s;
+      span {
+        opacity: 0;
+      }
+      @for $i from 1 through 8 {
+        span:nth-child(#{$i}) {
+          animation-name: showSpan ,changeColor;
+          animation-delay: #{$i * 0.1}s ,#{$i * 0.1 + 0.9}s;
+          animation-duration: 0.1s ,2s;
+          animation-fill-mode: forwards, backwards;
+          animation-iteration-count: 1 ,infinite;
+          text-shadow: 1px 1px 1px black;
+
+        }
       }
     }
 
-    .appointment-form {
-      padding: 0 20px;
-      flex-grow: 2;
+    &__box {
+      overflow-y: hidden;
+      padding: 20px 0;
+      background-color: ghostwhite;
+      border-radius: 0 0 20px 20px;
+      display: flex;
 
+      .appointment-animation {
+        display: none;
+        width: 40%;
+        align-self: start;
+        flex-grow: 1;
 
-      &__label {
-        font-size: 2rem;
-        color: #02203c;
-        font-weight: bold;
-
+        @include desktop {
+          display: block;
+        }
       }
 
-      &__input {
-        margin-top: 5px;
-        color: #02203c;
-        font-weight: bold;
-        display: block;
-        width: 100%;
-        font-size: 1.5rem;
-        border: none;
-        border-bottom: 2px solid gray;
-        padding: 10px 5px;
-        margin-bottom: 30px;
-        background-color: lighten(#626ee3, 12%);
-        @include tablet {
+      .appointment-form {
+        padding: 0 20px;
+        flex-grow: 2;
+        position: relative;
+        .error-message {
+          font-weight: bold;
+          color: tomato;
+          font-size: 1.5rem;
+        }
+        .error {
+          border-bottom: 2px solid tomato;
+        }
+        .name-error,.surname-error,.phone-error,.email-error,.city-error {
+          position: absolute;
+          left: 20px;
+
+        }
+        .name-error {
+          top: 70px;
+        }
+        .surname-error {
+          top: 165px;
+        }
+        .phone-error {
+          top: 260px;
+        }
+        .email-error {
+          top: 350px;
+        }
+        .city-error {
+          top: 450px
+        }
+
+
+
+        &__label {
+          font-size: 2rem;
+          color: #02203c;
+          font-weight: bold;
+
+        }
+
+        &__input {
+          margin-top: 5px;
+          color: #02203c;
+          font-weight: bold;
+          display: block;
           width: 100%;
+          font-size: 1.5rem;
+          border: none;
+          border-bottom: 2px solid gray;
+          padding: 10px 5px;
+          margin-bottom: 30px;
+          background-color: lighten(#626ee3,12%);
+          @include tablet {
+            width: 100%;
+          }
         }
-      }
 
-      .appointment-form__btn {
-        color: $color-text-first;
-        background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
-        padding: 16px 32px;
-        font-weight: 700;
-        box-shadow: 0 8px 16px rgba(255, 77, 121, 0.25);
-        border-radius: 10px;
-        font-size: 1.8rem;
-        font-family: 'Mukta', sans-serif;
-        margin: 0 auto;
-        border: none;
+        .appointment-form__btn {
+          color: $color-text-first;
+          background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
+          padding: 16px 32px;
+          font-weight: 700;
+          box-shadow: 0 8px 16px rgba(255,77,121,0.25);
+          border-radius: 10px;
+          font-size: 1.8rem;
+          font-family: 'Mukta',sans-serif;
+          margin: 0 auto;
+          border: none;
 
-        &:hover {
-          box-shadow: 0 8px 16px 10px rgba(255, 77, 121, 0.25);
+          &:hover {
+            box-shadow: 0 8px 16px 10px rgba(255,77,121,0.25);
+          }
         }
       }
     }
   }
 }
+

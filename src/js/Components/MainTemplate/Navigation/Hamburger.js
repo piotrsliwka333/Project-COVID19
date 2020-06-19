@@ -30,13 +30,11 @@ export const Hamburger = () => {
 }
 
 const HamburgerNavigationElement = ({link, title, closeHamburgerMenu}) => {
-
 	const checkFn = () => {
 		if (typeof closeHamburgerMenu === "function") {
 			closeHamburgerMenu();
 		}
 	}
-
 	return (
 		<li><Link onClick={checkFn} className="hamburger-navigation-list__element" to={`${link}`}>{title}</Link></li>
 	)

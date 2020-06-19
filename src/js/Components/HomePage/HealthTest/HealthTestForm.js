@@ -1,21 +1,17 @@
 import React, {useState} from "react"
 
 export const HealthTestForm = (props) => {
-	const [healthPoints,setHealthPoints] = useState(0)
+	const [healthPoints, setHealthPoints] = useState(0)
 
-	const handleClick = (e) => { // here we check if input is checked or not
-															// and animation will show in % how much chance we have
-															// to have COVID 19
+	const handleClick = (e) => {  // here we check if input is checked or not
+		// and animation will show in % how much chance we have
+		// to have COVID 19
 		if (e.target.checked === true) {
 			setHealthPoints(prevState => prevState + 1)
 		} else {
 			setHealthPoints(prevState => prevState - 1)
 		}
 	}
-
-
-
-
 
 	return (
 		<div className={"health-test__form-box"}>
@@ -42,11 +38,12 @@ export const HealthTestForm = (props) => {
 				</div>
 				<div className="health-test__form-boxes">
 					<label>Do you loss of taste</label>
-					<input  onClick={(e) => handleClick(e)} type="checkbox"/>
+					<input onClick={(e) => handleClick(e)} type="checkbox"/>
 				</div>
-				<button onClick={(e) => props.closeForm(e,healthPoints)} className="health-test__form-btn">Confirm Your Symptoms</button>
+				<button onClick={(e) => props.closeForm(e, healthPoints)} className="health-test__form-btn">Confirm Your
+					Symptoms
+				</button>
 			</form>
 		</div>
-
 	)
 }

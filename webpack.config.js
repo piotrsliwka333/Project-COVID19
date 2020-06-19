@@ -3,7 +3,6 @@ const autoprefixer = require('autoprefixer');
 const Html = require('html-webpack-plugin');
 const MiniCSS = require("mini-css-extract-plugin");
 
-
 const entryPath = "src";
 const entryFile = "App.js";
 

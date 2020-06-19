@@ -1,5 +1,6 @@
 .jumbotron{
   background: linear-gradient(146deg, rgba(2,32,60,1) 35%, rgba(241,238,238,1) 35.5%);
+  padding-bottom: 100px;
 
 
 
@@ -486,6 +487,8 @@
   }
 
   .appointment {
+    position: relative;
+    overflow: hidden;
     margin: 50px auto;
     border-radius: 20px;
     box-shadow:  0 1rem 2rem 1rem #626ee3;
@@ -502,7 +505,56 @@
       border-bottom:  4px solid #626ee3;
     }
 
+    @keyframes  hideForm{
+      0% {transform: translateX(0) scale(1)}
+      20% {transform: translateX(20%) scale(0.9)}
+      40%{transform: translateX(0) scale(0.8)}
+      60% {transform: translateX(-20%) scale(0.7)}
+      80% {transform: translateX(-80%) scale(0.6)}
+      100% {transform: translateX(-120%) scale(0.5); border-radius: 50%}
+    }
+    .form-sent {
+      animation-name: hideForm;
+      animation-timing-function: linear;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes showSpan {
+      0% {opacity: 0}
+      100% {opacity: 1}
+    }
+
+    @keyframes changeColor {
+      0% {color: greenyellow}
+      100% {color: green}
+    }
+    .info-message {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      top: 50%;
+      font-size: 5rem;
+      color: greenyellow;
+      transition: 1s;
+      span {
+        opacity: 0;
+      }
+      @for $i from 1 through 8 {
+        span:nth-child(#{$i}) {
+          animation-name: showSpan ,changeColor;
+          animation-delay: #{$i * 0.1}s ,#{$i * 0.1 + 0.9}s;
+          animation-duration: 0.1s ,2s;
+          animation-fill-mode: forwards, backwards;
+          animation-iteration-count: 1 ,infinite;
+          text-shadow: 1px 1px 1px black;
+
+        }
+      }
+    }
+
     &__box {
+      overflow-y: hidden;
       padding: 20px 0;
       background-color: ghostwhite;
       border-radius: 0 0 20px 20px;
@@ -522,6 +574,40 @@
       .appointment-form {
         padding: 0 20px;
         flex-grow: 2;
+        position: relative;
+        .error-message {
+          font-weight: bold;
+          color: tomato;
+          font-size: 1.5rem;
+        }
+        .error {
+          border-bottom: 2px solid tomato;
+        }
+        .name-error,.surname-error,.phone-error,.email-error,.city-error,.sent-error {
+          position: absolute;
+          left: 20px;
+
+        }
+        .name-error {
+          top: 70px;
+        }
+        .surname-error {
+          top: 165px;
+        }
+        .phone-error {
+          top: 260px;
+        }
+        .email-error {
+          top: 350px;
+        }
+        .city-error {
+          top: 450px
+        }
+        .sent-error {
+          font-size: 1.5rem;
+          bottom: -15px;
+        }
+
 
 
         &__label {
@@ -572,7 +658,5 @@
 
 
     }
-
-
   }
 }

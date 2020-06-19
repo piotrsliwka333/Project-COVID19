@@ -3,7 +3,6 @@ import {QuickStatsTitle} from "./QuickStatsTitle";
 import {QuickStatsCountry} from "./QuickStatsCountry";
 import {QuickStatsWorld} from "./QuickStatsWorld";
 
-
 export const QuickStats = () => {
 	const [data, setData] = useState(false)
 
@@ -15,10 +14,11 @@ export const QuickStats = () => {
 			.then(data => {
 				setData(data)
 			})
-			.catch(err => console.log(err))
+			.catch(err => {
+				setData(false)
+			})
 
 	}, [])
-
 
 	if (!data) return (
 		<article className="quick-stats col-10 col-md-5 col-xl-4">

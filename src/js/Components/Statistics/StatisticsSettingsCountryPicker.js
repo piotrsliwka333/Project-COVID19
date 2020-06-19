@@ -1,9 +1,6 @@
 import React from "react";
 
-//<StatisticsSettingsCountryPicker choseCountry={} flag={} country={} setCountry={}/>
-
 export const StatisticsSettingsCountryPicker = ({choseCountry, flag, country, setCountry}) => {
-
 	return (
 		<div className="statistics-box">
 			<div className="statistics-box__country">

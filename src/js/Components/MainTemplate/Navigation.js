@@ -4,8 +4,6 @@ import {Hamburger} from "./Navigation/Hamburger";
 import {DesktopNavigation} from "./Navigation/DesktopNavigation";
 
 export const Navigation = () => {
-
-// 462x207
 	return (
 		<div className="navigation-container">
 			<Logo/>

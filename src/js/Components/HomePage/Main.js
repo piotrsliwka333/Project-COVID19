@@ -9,11 +9,10 @@ import {Purchase} from "./Purchase/Purchase";
 
 export const HomePage = () => {
 
-
 	return (
 		<MainTemplate>
 			<section className="jumbotron">
-				<h1 className="jumbotron-title ">Your guide during the epidemic time</h1>
+				<h1 data-aos='fade-left' className="jumbotron-title ">Your guide during the epidemic time</h1>
 				<Grid>
 					<HealthTest/>
 					<QuickStats>

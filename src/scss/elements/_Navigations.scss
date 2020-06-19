@@ -32,7 +32,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 45%;
+      width: 60%;
       height: 100vh;
       box-shadow: 0 0 15px black;
       @include desktop {
@@ -119,6 +119,10 @@
       height: 100%;
 
       li {
+      }
+      .active {
+        border-bottom: 3px solid $color-text-second;
+        padding-bottom: 17px;
       }
 
       &__element {
